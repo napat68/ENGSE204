@@ -29,6 +29,8 @@ public class Lab102 {
 
      // Results
      System.out.println(rect.getArea());
+     
+     sc.close();
  }
 }
 

@@ -16,7 +16,7 @@ public class Lab106 {
 
         Scanner Number = new Scanner(System.in);   
 
-        System.out.print("Enter number: ");
+        System.out.print("Please enter number: ");
         int num = Number.nextInt();              
 
         printMultiplicationTable(num);

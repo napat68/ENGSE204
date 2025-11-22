@@ -4,38 +4,33 @@ import java.util.Scanner;
 
 public class Lab104 {
 
-    //Method
-    // Calculate grade from score
-    public static char getGrade(int score) {
+    public static char getGrade(int points) {
 
-        if (score >= 80 && score <= 100) {
+        if (points >= 80 && points <= 100) {
             return 'A';
-        } else if (score >= 70) {     // 70–79
+        } else if (points >= 70) {     
             return 'B';
-        } else if (score >= 60) {     // 60–69
+        } else if (points >= 60) {     
             return 'C';
-        } else if (score >= 50) {     // 50–59
+        } else if (points >= 50) {     
             return 'D';
-        } else {                      // 0–49
+        } else {                      
             return 'F';
         }
     }
 
-    //main Method
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);  
+        Scanner Number = new Scanner(System.in);  
 
-        System.out.print("Enter score: ");
-        int score = sc.nextInt();             // Get score input from user
+        System.out.print("Please enter points: ");
+        int points = Number.nextInt();            
 
-        // Use method calculate grade
-        char grade = getGrade(score);
+        char grade = getGrade(points);
 
-        // Results
         System.out.println(grade);
 
-        sc.close();
+        Number.close();
     }
 }
 

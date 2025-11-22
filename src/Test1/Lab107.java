@@ -4,42 +4,28 @@ import java.util.Scanner;
 
 public class Lab107 {
 
-    // ============================
-    //          Attribute
-    // ============================
-    // ไม่มี attribute ระดับคลาสในโปรแกรมนี้
-
-
-    // ============================
-    //          Method
-    // ============================
-    // คำนวณผลรวม N จำนวน โดยบวกสะสมทันที ไม่ใช้ array
-    public static int sumNumbers(int n, Scanner sc) {
+    public static int sumNumbers(int n, Scanner Number) {
         int sum = 0;
 
         for (int i = 0; i < n; i++) {
-            int num = sc.nextInt();   // อ่านตัวเลขทีละตัว
-            sum += num;               // บวกสะสมเข้า sum
+            int num = Number.nextInt();   
+            sum += num;               
         }
 
-        return sum;   // คืนค่าผลรวมทั้งหมด
+        return sum;  
     }
 
-
-    // ============================
-    //          main Method
-    // ============================
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner Number = new Scanner(System.in);
 
-        System.out.print("Enter N: ");
-        int n = sc.nextInt();          // รับจำนวนตัวเลขที่จะตามมา
+        System.out.print("Please enter N: ");
+        int n = Number.nextInt();             
 
-        int result = sumNumbers(n, sc);   // ส่งงานให้เมธอดทำการบวก
+        int result = sumNumbers(n, Number);   
 
-        System.out.println(result);       // แสดงผลรวม
+        System.out.println(result);       
 
-        sc.close();
+        Number.close();
     }
 }

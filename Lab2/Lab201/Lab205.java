@@ -1,14 +1,39 @@
 package Lab201;
 
-public class Lab205 {
+class Rectangle {
 
-	public Lab205() {
-		// TODO Auto-generated constructor stub
-	}
+ double width;    
+ double height;   
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+ Rectangle(double width, double height) {
+     this.width  = width;
+     this.height = height;
+ }
 
-	}
+ double getArea() {
+     return width * height;
+ }
 
+ double getPerimeter() {
+     return 2 * (width + height);
+ }
 }
+
+public class Lab205 {
+ public static void main(String[] args) {
+
+     java.util.Scanner input = new java.util.Scanner(System.in);
+
+     double width   = input.nextDouble();
+     double height  = input.nextDouble();
+
+     Rectangle rect = new Rectangle(width, height);
+
+     System.out.println(rect.getArea());
+
+     System.out.println(rect.getPerimeter());
+
+     input.close();
+ }
+}
+

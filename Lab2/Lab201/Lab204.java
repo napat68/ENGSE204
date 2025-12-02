@@ -1,12 +1,12 @@
 package Lab201;
 
-class Student {
+class StudentLab204 {
 
  String name;         
  int midtermScore;    
  int finalScore;       
 
- Student(String name, int midtermScore, int finalScore) {
+ StudentLab204(String name, int midtermScore, int finalScore) {
      this.name         = name;
      this.midtermScore = midtermScore;
      this.finalScore   = finalScore;
@@ -41,7 +41,7 @@ public class Lab204 {
 
      int finalScore   = input.nextInt();
 
-     Student std = new Student(name, midtermScore, finalScore);
+     StudentLab204 std = new StudentLab204(name, midtermScore, finalScore);
 
      std.displaySummary();
 

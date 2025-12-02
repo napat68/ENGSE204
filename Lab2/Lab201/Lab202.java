@@ -1,11 +1,11 @@
 package Lab201;
 
-class Student {
+class StudentLab202 {
 
  String studentId;   
  String name;        
 
- Student(String studentId, String name) {
+ StudentLab202(String studentId, String name) {
      this.studentId = studentId;
      this.name      = name;
  }
@@ -24,7 +24,7 @@ public class Lab202 {
      String id   = input.nextLine();
      String name = input.nextLine();
 
-     Student std = new Student(id, name);
+     StudentLab202 std = new StudentLab202(id, name);
 
      std.displayInfo();
 

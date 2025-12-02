@@ -1,13 +1,13 @@
 package Lab201;
 
-class Student {
+class StudentLab203 {
 
  String studentId;  
  String name;      
 
  static int studentCount = 0;
 
- Student(String studentId, String name) {
+ StudentLab203(String studentId, String name) {
      this.studentId = studentId;
      this.name      = name;
 
@@ -31,10 +31,10 @@ public class Lab203 {
      for (int i = 0; i < N; i++) {
          String id   = input.nextLine();    
          String name = input.nextLine();  
-         new Student(id, name);          
+         new StudentLab203(id, name);          
      }
 
-     System.out.println(Student.studentCount);
+     System.out.println(StudentLab203.studentCount);
 
      input.close();
  }

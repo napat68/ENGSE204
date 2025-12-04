@@ -2,41 +2,39 @@ package Lab201;
 
 class BankAccount {
 
- String ownerName;   
- double balance;   
+    String ownerName;    
+    double balance;      
 
- BankAccount(String ownerName, double initialBalance) {
-     this.ownerName = ownerName;
-     this.balance = initialBalance;
- }
+    BankAccount(String ownerName, double initialBalance) {
+        this.ownerName = ownerName;
+        this.balance   = initialBalance;
+    }
 
- void deposit(double amount) {
-     balance += amount;
- }
+    void deposit(double amountToDeposit) {
+        balance = balance + amountToDeposit;
+    }
 
- void displaySummary() {
-     System.out.println("Owner: " + ownerName);
-     System.out.println("Balance: " + balance);
- }
+    void displaySummary() {
+        System.out.println("Owner: " + ownerName);
+        System.out.println("Balance: " + balance);
+    }
 }
 
 public class Lab206 {
- public static void main(String[] args) {
 
-     java.util.Scanner input = new java.util.Scanner(System.in);
+    public static void main(String[] args) {
 
-     String name = input.nextLine();
+        java.util.Scanner input = new java.util.Scanner(System.in);
 
-     double initial = input.nextDouble();
+        String accountOwnerName = input.nextLine();
+        double initialBalance   = input.nextDouble();
+        double depositAmount    = input.nextDouble();
 
-     double amount  = input.nextDouble();
+        BankAccount account = new BankAccount(accountOwnerName, initialBalance);
 
-     BankAccount account = new BankAccount(name, initial);
+        account.deposit(depositAmount);
+        account.displaySummary();
 
-     account.deposit(amount);
-
-     account.displaySummary();
-
-     input.close();
- }
+        input.close();
+    }
 }

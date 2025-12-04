@@ -1,33 +1,35 @@
 package Lab201;
-
 class StudentLab202 {
 
- String studentId;   
- String name;        
+    String studentId;  
+    String studentName; 
 
- StudentLab202(String studentId, String name) {
-     this.studentId = studentId;
-     this.name      = name;
- }
+    StudentLab202(String idValue, String nameValue) {
+        this.studentId   = idValue;
+        this.studentName = nameValue;
+    }
 
- void displayInfo() {
-     System.out.println(studentId);
-     System.out.println(name);
- }
+    void displayInfo() {
+        System.out.println(studentId);
+        System.out.println(studentName);
+    }
 }
 
 public class Lab202 {
- public static void main(String[] args) {
 
-     java.util.Scanner input = new java.util.Scanner(System.in);
+    public static void main(String[] args) {
 
-     String id   = input.nextLine();
-     String name = input.nextLine();
+        java.util.Scanner input = new java.util.Scanner(System.in);
 
-     StudentLab202 std = new StudentLab202(id, name);
+        String inputStudentId   = input.nextLine();
+        String inputStudentName = input.nextLine();
+        StudentLab202 student   = new StudentLab202(
+            inputStudentId,
+            inputStudentName
+        );
 
-     std.displayInfo();
-
-     input.close();
- }
+        student.displayInfo();
+        
+        input.close();
+    }
 }

@@ -2,52 +2,50 @@ package Lab201;
 
 class BankAccountLab207 {
 
- String ownerName;  
- double balance;     
+    String ownerName;     
+    double balance;      
 
- BankAccountLab207(String ownerName, double initialBalance) {
-     this.ownerName = ownerName;
-     this.balance   = initialBalance;
- }
+    BankAccountLab207(String ownerName, double initialBalance) {
+        this.ownerName = ownerName;
+        this.balance = initialBalance;
+    }
 
- void withdraw(double amount) {
+    void withdraw(double amountToWithdraw) {
 
-     if (amount <= balance) {
-         balance -= amount;
-         System.out.println("Withdrawal successful.");
-     } 
+        if (amountToWithdraw <= balance) {
+            balance = balance - amountToWithdraw;
+            System.out.println("Withdrawal successful.");
+        }
 
-     else {
-         System.out.println("Insufficient funds.");
-     }
- }
+        else {
+            System.out.println("Insufficient funds.");
+        }
+    }
 
- void displayBalance() {
-     System.out.println("Balance: " + balance);
- }
+    void displayBalance() {
+        System.out.println("Balance: " + balance);
+    }
 }
 
-public class Lab207 {  
+public class Lab207 {
 
- public static void main(String[] args) {
+    public static void main(String[] args) {
 
-     java.util.Scanner input = new java.util.Scanner(System.in);
-     String name = input.nextLine();
+        java.util.Scanner input = new java.util.Scanner(System.in);
 
-     double initial = input.nextDouble();
+        String accountOwnerName = input.nextLine();
 
-     double w1      = input.nextDouble();
+        double initialBalance       = input.nextDouble();
+        double firstWithdrawAmount  = input.nextDouble();
+        double secondWithdrawAmount = input.nextDouble();
 
-     double w2      = input.nextDouble();
+        BankAccountLab207 account = new BankAccountLab207(accountOwnerName, initialBalance);
 
-     BankAccountLab207 account = new BankAccountLab207(name, initial);
+        account.withdraw(firstWithdrawAmount);
+        account.withdraw(secondWithdrawAmount);
 
-     account.withdraw(w1);
+        account.displayBalance();
 
-     account.withdraw(w2);
-
-     account.displayBalance();
-
-     input.close();
- }
+        input.close();
+    }
 }

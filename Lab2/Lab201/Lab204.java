@@ -2,50 +2,53 @@ package Lab201;
 
 class StudentLab204 {
 
- String name;         
- int midtermScore;    
- int finalScore;       
+    String studentName;      
+    int midtermScore;       
+    int finalScore;          
 
- StudentLab204(String name, int midtermScore, int finalScore) {
-     this.name         = name;
-     this.midtermScore = midtermScore;
-     this.finalScore   = finalScore;
- }
+    StudentLab204(String studentName, int midtermScore, int finalScore) {
+        this.studentName  = studentName;
+        this.midtermScore = midtermScore;
+        this.finalScore   = finalScore;
+    }
 
- double calculateAverage() {
-     return (midtermScore + finalScore) / 2.0;
- }
+    double calculateAverage() {
+        return (midtermScore + finalScore) / 2.0;
+    }
 
- void displaySummary() {
-     double average = calculateAverage();   
+    void displaySummary() {
 
-     System.out.println("Name: " + name);
-     System.out.println("Average Score: " + average);
+        double averageScore = calculateAverage();
 
-     if (average >= 50.0) {
-         System.out.println("Status: Pass");
-     } else {
-         System.out.println("Status: Fail");
-     }
- }
+        System.out.println("Name: " + studentName);
+        System.out.println("Average Score: " + averageScore);
+
+        if (averageScore >= 50.0) {
+            System.out.println("Status: Pass");
+        }
+        else {
+            System.out.println("Status: Fail");
+        }
+    }
 }
 
 public class Lab204 {
- public static void main(String[] args) {
 
-     java.util.Scanner input = new java.util.Scanner(System.in);
+    public static void main(String[] args) {
 
-     String name      = input.nextLine();
+        java.util.Scanner input = new java.util.Scanner(System.in);
+        String inputStudentName = input.nextLine();
+        
+        int inputMidtermScore = input.nextInt();
+        int inputFinalScore   = input.nextInt();
 
-     int midtermScore = input.nextInt();
+        StudentLab204 student = new StudentLab204(
+            inputStudentName,
+            inputMidtermScore,
+            inputFinalScore
+        );
 
-     int finalScore   = input.nextInt();
-
-     StudentLab204 std = new StudentLab204(name, midtermScore, finalScore);
-
-     std.displaySummary();
-
-     input.close();
- }
+        student.displaySummary();
+        input.close();
+    }
 }
-

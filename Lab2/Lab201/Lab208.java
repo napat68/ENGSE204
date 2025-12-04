@@ -2,34 +2,36 @@ package Lab201;
 
 class TempConverter {
 
- public static double toF(double c) {
-     return (c * 9.0 / 5.0) + 32.0;
- }
+    public static double toFahrenheit(double celsiusValue) {
+        return (celsiusValue * 9.0 / 5.0) + 32.0;
+    }
 
- public static double toC(double f) {
-     return (f - 32.0) * 5.0 / 9.0;
- }
+    public static double toCelsius(double fahrenheitValue) {
+        return (fahrenheitValue - 32.0) * 5.0 / 9.0;
+    }
 }
 
 public class Lab208 {
 
- public static void main(String[] args) {
+    public static void main(String[] args) {
 
-     java.util.Scanner input = new java.util.Scanner(System.in);
+        java.util.Scanner input = new java.util.Scanner(System.in);
 
-     String modeInput = input.nextLine();      
-     double tempValue = input.nextDouble();    
+        String modeInput = input.nextLine();
 
-     double output;
+        double temperatureValue = input.nextDouble();
 
-     if ("C_TO_F".equals(modeInput)) {
-         output = TempConverter.toF(tempValue);
-     } else {
-         output = TempConverter.toC(tempValue);
-     }
+        double resultValue;
 
-     System.out.println(output);
+        if ("C_TO_F".equals(modeInput)) {
+            resultValue = TempConverter.toFahrenheit(temperatureValue);
+        } 
+        else {
+            resultValue = TempConverter.toCelsius(temperatureValue);
+        }
 
-     input.close();
- }
+        System.out.println(resultValue);
+
+        input.close();
+    }
 }

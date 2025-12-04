@@ -2,66 +2,69 @@ package Lab201;
 
 class Product {
 
- String name;   
- double cost;   
 
- Product(String name, double cost) {
-     this.name = name;
-     this.cost = cost;
- }
+    String name;      
+    double cost;      
+
+    Product(String productName, double productCost) {
+        this.name = productName;
+        this.cost = productCost;
+    }
 }
 
 class ShoppingCart {
 
- Product[] items;   
- int itemCount;    
+    Product[] items;    
+    int itemCount;       
 
- ShoppingCart() {
-     items = new Product[10]; 
-     itemCount = 0;          
- }
+    ShoppingCart() {
+        items = new Product[10]; 
+        itemCount = 0;
+    }
 
- void addProduct(Product p) {
-     items[itemCount] = p; 
-     itemCount++;           
- }
+    void addProduct(Product product) {
+        items[itemCount] = product;
+        itemCount++;
+    }
 
- double calculateTotalPrice() {
-     double sum = 0.0;
+    double calculateTotalPrice() {
 
-     for (int i = 0; i < itemCount; i++) {
-         sum += items[i].cost;
-     }
+        double totalCost = 0.0;
 
-     return sum;
- }
+        for (int index = 0; index < itemCount; index++) {
+            totalCost += items[index].cost;
+        }
+
+        return totalCost;
+    }
 }
 
 public class Lab210 {
- public static void main(String[] args) {
 
-     java.util.Scanner input = new java.util.Scanner(System.in);
+    public static void main(String[] args) {
 
-     int n = input.nextInt();
-     input.nextLine();  
+        java.util.Scanner input = new java.util.Scanner(System.in);
 
-     ShoppingCart cart = new ShoppingCart();
+        int itemTotal = input.nextInt();
+        input.nextLine(); 
 
-     for (int i = 0; i < n; i++) {
+        ShoppingCart cart = new ShoppingCart();
 
-         String productName  = input.nextLine(); 
-         double productCost = input.nextDouble(); 
-         input.nextLine();  
+        for (int index = 0; index < itemTotal; index++) {
 
-         Product item = new Product(productName, productCost);
+            String productName = input.nextLine();
+            double productCost = input.nextDouble();
+            input.nextLine(); 
 
-         cart.addProduct(item);
-     }
+            Product product = new Product(productName, productCost);
 
-     double total = cart.calculateTotalPrice();
-     System.out.println(total);
+            cart.addProduct(product);
+        }
 
-     input.close();
- }
+        double total = cart.calculateTotalPrice();
+
+        System.out.println(total);
+
+        input.close();
+    }
 }
-

@@ -7,7 +7,7 @@ class Car {
 
  Car(String model, int year) {
      this.model = model;
-     this.year = year;
+     this.year  = year;
  }
 
  public String getModel() {

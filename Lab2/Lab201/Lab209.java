@@ -2,55 +2,54 @@ package Lab201;
 
 class Address {
 
- String street;   
- String city;     
- String zipCode;  
+    String street;
+    String city;
+    String zipCode;
 
- Address(String s, String c, String z) {
-     street  = s;
-     city    = c;
-     zipCode = z;
- }
+    Address(String streetName, String cityName, String zipCodeValue) {
+        this.street  = streetName;
+        this.city    = cityName;
+        this.zipCode = zipCodeValue;
+    }
 
- String fullAddress() {
-     return street + ", " + city + ", " + zipCode;
- }
+    String getFullAddress() {
+        return street + ", " + city + ", " + zipCode;
+    }
 }
 
 class StudentLab209 {
 
- String name;
- Address addr;   
+    String name;
+    Address address;  
 
- StudentLab209(String n, Address a) {
-     name = n;
-     addr = a;
- }
+    StudentLab209(String studentName, Address addressObject) {
+        this.name    = studentName;
+        this.address = addressObject;
+    }
 
- void displayProfile() {
-     System.out.println("Name: " + name);
-     System.out.println("Address: " + addr.fullAddress());
- }
+    void displayProfile() {
+        System.out.println("Name: " + name);
+        System.out.println("Address: " + address.getFullAddress());
+    }
 }
 
 public class Lab209 {
 
- public static void main(String[] args) {
+    public static void main(String[] args) {
 
-     java.util.Scanner input = new java.util.Scanner(System.in);
+        java.util.Scanner input = new java.util.Scanner(System.in);
 
-     String studentName = input.nextLine();
-     String streetName  = input.nextLine();
-     String cityName    = input.nextLine();
-     String zipInput    = input.nextLine();
+        String studentName  = input.nextLine();
+        String streetName   = input.nextLine();
+        String cityName     = input.nextLine();
+        String zipCodeValue = input.nextLine();
 
-     Address ad = new Address(streetName, cityName, zipInput);
+        Address studentAddress = new Address(streetName, cityName, zipCodeValue);
 
-     StudentLab209 stu = new StudentLab209(studentName, ad);
+        StudentLab209 student  = new StudentLab209(studentName, studentAddress);
 
-     stu.displayProfile();
+        student.displayProfile();
 
-     input.close();
- }
+        input.close();
+    }
 }
-

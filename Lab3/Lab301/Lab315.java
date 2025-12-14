@@ -59,7 +59,6 @@ class UserLab315 {
             return;
         }
 
-        // ยังไม่ล็อก
         int left = maxAttempts - failedAttempts;
         System.out.println("Login failed. " + left + " attempts left.");
     }

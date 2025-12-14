@@ -4,44 +4,47 @@ import java.util.Scanner;
 
 class EmployeeLab307 {
 
- private String employeeId;  
- private String department;   
+    private String employeeId;
 
- public EmployeeLab307(String employeeId, String department) {
-     this.employeeId = employeeId;
-     this.department = department;
- }
+    private String department;
 
- public String getEmployeeId() {
-     return this.employeeId;
- }
+    public EmployeeLab307(String employeeId, String department) {
+        this.employeeId = employeeId;
+        this.department = department;
+    }
 
- public String getDepartment() {
-     return this.department;
- }
+    public String getEmployeeId() {
+        return employeeId;
+    }
 
- public void setDepartment(String newDepartment) {
-     this.department = newDepartment;
- }
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String newDepartment) {
+        department = newDepartment;
+    }
 }
 
 public class Lab307 {
- public static void main(String[] args) {
 
-     Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {
 
-     String empId          = input.nextLine();
-     String startDept      = input.nextLine(); 
-     String newDepartment  = input.nextLine(); 
+        Scanner input = new Scanner(System.in);
 
-     EmployeeLab307 emp = new EmployeeLab307(empId, startDept);
+        String empId = input.nextLine();
+        String startDept = input.nextLine();
+        String newDept = input.nextLine();
 
-     emp.setDepartment(newDepartment);
+        EmployeeLab307 employee = new EmployeeLab307(empId, startDept);
 
-     System.out.println(emp.getEmployeeId());
-     System.out.println(emp.getDepartment());
+        employee.setDepartment(newDept);
 
-     input.close();
- }
+        System.out.println(employee.getEmployeeId());
+        System.out.println(employee.getDepartment());
+
+        input.close();
+    }
 }
+
 

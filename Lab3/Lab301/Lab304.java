@@ -2,45 +2,43 @@ package Lab301;
 
 import java.util.Scanner;
 
-class ProductWithStaticCounterEncapsulation {
+class Product {
 
- private String name;
+    private String name;
 
- private static int productCount = 0;
+    private static int productCount = 0;
 
- public ProductWithStaticCounterEncapsulation(String name) {
-     this.name = name;
-     productCount++;
- }
+    public Product(String name) {
+        this.name = name;
+        productCount++;
+    }
 
- public String getName() {
-     return this.name;
- }
+    public String getName() {
+        return name;
+    }
 
- public static int getProductCount() {
-     return productCount;
- }
+    public static int getProductCount() {
+        return productCount;
+    }
 }
 
 public class Lab304 {
- public static void main(String[] args) {
 
-     Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {
 
-     int n = input.nextInt();
-     input.nextLine(); 
+        Scanner input = new Scanner(System.in);
 
-     for (int i = 0; i < n; i++) {
-         String productName = input.nextLine();
-         new ProductWithStaticCounterEncapsulation(productName);
-     }
+        int n = input.nextInt();
+        input.nextLine(); 
 
-     System.out.println(
-         ProductWithStaticCounterEncapsulation.getProductCount()
-     );
+        for (int i = 0; i < n; i++) {
+            String productName = input.nextLine();
+            new Product(productName);
+        }
 
-     input.close();
- }
+        System.out.println(Product.getProductCount());
+
+        input.close();
+    }
 }
-
 

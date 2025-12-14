@@ -5,6 +5,7 @@ import java.util.Scanner;
 class DatabaseConnection {
 
     private String connectionString;
+
     private boolean connected;
 
     public DatabaseConnection(String connectionString) {
@@ -13,38 +14,45 @@ class DatabaseConnection {
     }
 
     public boolean isConnected() {
-        return this.connected;
+        return connected;
     }
 
     public void connect() {
 
-        if (this.connected == true) {
+        if (connected) {
             System.out.println("Already connected.");
             return;
         }
 
-        this.connected = true;
-        System.out.println("Connected to " + this.connectionString);
+        connected = true;
+        System.out.println("Connected to " + connectionString);
     }
 
     public void disconnect() {
 
-        if (this.connected == false) {
+        if (!connected) {
             System.out.println("Already disconnected.");
             return;
         }
 
-        this.connected = false;
+        connected = false;
         System.out.println("Disconnected.");
     }
 }
 
 public class Lab305 {
+
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
         String databaseName = input.nextLine();
+
+        if (databaseName.isEmpty()) {
+            System.out.println("Invalid database name.");
+            input.close();
+            return;
+        }
 
         DatabaseConnection dbConnection =
                 new DatabaseConnection(databaseName);
@@ -58,5 +66,6 @@ public class Lab305 {
         input.close();
     }
 }
+
 
 

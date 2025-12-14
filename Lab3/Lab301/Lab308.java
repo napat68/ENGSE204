@@ -28,7 +28,7 @@ class InventoryItem {
      if (amount > 0) {
          this.stock += amount;
          System.out.println("Stock added.");
-         return; // early return
+         return; 
      }
      System.out.println("Invalid amount.");
  }
@@ -36,13 +36,13 @@ class InventoryItem {
  public void sellStock(int amount) {
      if (amount <= 0) {
          System.out.println("Invalid amount.");
-         return; // early return
+         return; 
      }
 
      if (amount <= this.stock) {
          this.stock -= amount;
          System.out.println("Sale successful.");
-         return; // early return
+         return; 
      }
 
      System.out.println("Not enough stock.");

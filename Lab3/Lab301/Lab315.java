@@ -66,29 +66,25 @@ class UserLab315 {
 
 public class Lab315 {
 
-    private static int readIntLine(Scanner sc) {
-        return Integer.parseInt(sc.nextLine().trim());
-    }
-
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
-        String username = input.nextLine();
+        String username = input .nextLine().trim();
         UserLab315 user = new UserLab315(username);
 
-        int n = readIntLine(input);
+        int n = Integer.parseInt(input.nextLine().trim());
 
         for (int i = 0; i < n; i++) {
             String command = input.nextLine().trim();
 
-            if (command.equals("SET_POLICY")) {
-                int max = readIntLine(input);
-                UserLab315.setPolicy(max);
-
-            } else if (command.equals("LOGIN")) {
-                String password = input.nextLine();
+            if (command.equals("LOGIN")) {
+                String password = input.nextLine().trim();
                 user.login(password);
+
+            } else if (command.equals("SET_POLICY")) {
+                int max = Integer.parseInt(input.nextLine().trim());
+                UserLab315.setPolicy(max);
             }
         }
 

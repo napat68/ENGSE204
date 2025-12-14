@@ -4,62 +4,64 @@ import java.util.Scanner;
 
 class BankAccount {
 
- private double balance;
+    private double balance;
 
- public BankAccount(double initialBalance) {
-     if (initialBalance >= 0) {
-         this.balance = initialBalance;
-     } else {
-         this.balance = 0;
-     }
- }
+    public BankAccount(double initialBalance) {
+        if (initialBalance >= 0) {
+            balance = initialBalance;
+            return;
+        }
 
- public double getBalance() {
-     return this.balance;
- }
+        balance = 0.0;
+    }
 
- public void deposit(double amount) {
-     if (amount > 0) {
-         this.balance += amount;
-         System.out.println("Deposit successful.");
-         return; 
-     }
-     System.out.println("Invalid deposit amount.");
- }
+    public double getBalance() {
+        return balance;
+    }
 
- public void withdraw(double amount) {
-     if (amount <= 0) {
-         System.out.println("Invalid withdrawal amount.");
-         return; 
-     }
+    public void deposit(double amount) {
+        if (amount <= 0) {
+            System.out.println("Invalid deposit amount.");
+            return;
+        }
 
-     if (amount <= this.balance) {
-         this.balance -= amount;
-         System.out.println("Withdrawal successful.");
-         return; 
-     }
+        balance += amount;
+        System.out.println("Deposit successful.");
+    }
 
-     System.out.println("Insufficient funds.");
- }
+    public void withdraw(double amount) {
+        if (amount <= 0) {
+            System.out.println("Invalid withdrawal amount.");
+            return;
+        }
+
+        if (amount > balance) {
+            System.out.println("Insufficient funds.");
+            return;
+        }
+
+        balance -= amount;
+        System.out.println("Withdrawal successful.");
+    }
 }
 
 public class Lab306 {
- public static void main(String[] args) {
 
-     Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {
 
-     double initialBalance = input.nextDouble();
-     double depositAmount  = input.nextDouble();
-     double withdrawAmount = input.nextDouble();
+        Scanner input = new Scanner(System.in);
 
-     BankAccount acc = new BankAccount(initialBalance);
+        double initialBalance = input.nextDouble();
+        double depositAmount  = input.nextDouble();
+        double withdrawAmount = input.nextDouble();
 
-     acc.deposit(depositAmount);
-     acc.withdraw(withdrawAmount);
+        BankAccount account = new BankAccount(initialBalance);
 
-     System.out.println("Final Balance: " + acc.getBalance());
+        account.deposit  (depositAmount);
+        account.withdraw (withdrawAmount);
 
-     input.close();
- }
+        System.out.println("Final Balance: " + account.getBalance());
+
+        input.close();
+    }
 }
-

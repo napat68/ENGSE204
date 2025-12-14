@@ -12,7 +12,7 @@ class UserLab309 {
     public UserLab309(String username, String password) {
         this.usernameLab = username;
 
-        if (password.length() >= minPasswordLength) {
+        if (password.length() > minPasswordLength) {
             this.password = password;
             System.out.println("Creation successful.");
         } else {
@@ -30,7 +30,7 @@ class UserLab309 {
     }
 
     public void setPassword(String newPassword) {
-        if (newPassword.length() >= minPasswordLength) {
+        if (newPassword.length() > minPasswordLength) {
             this.password = newPassword;
             System.out.println("Update successful.");
             return;
@@ -82,5 +82,6 @@ public class Lab309 {
         input.close();
     }
 }
+
 
 

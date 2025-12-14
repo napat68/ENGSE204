@@ -70,24 +70,45 @@ public class Lab315 {
 
         Scanner input = new Scanner(System.in);
 
-        String username = input .nextLine().trim();
+        String username = input.nextLine().trim();
         UserLab315 user = new UserLab315(username);
 
         int n = Integer.parseInt(input.nextLine().trim());
 
         for (int i = 0; i < n; i++) {
             String command = input.nextLine().trim();
-
-            if (command.equals("LOGIN")) {
-                String password = input.nextLine().trim();
-                user.login(password);
-
-            } else if (command.equals("SET_POLICY")) {
-                int max = Integer.parseInt(input.nextLine().trim());
-                UserLab315.setPolicy(max);
-            }
+            processCommand(command, input, user);
         }
 
         input.close();
+    }
+
+    private static void processCommand(String command, Scanner input, UserLab315 user) {
+
+        switch (command) {
+            case "LOGIN":
+                handleLogin(input, user);
+                break;
+
+            case "SET_POLICY":
+                handleSetPolicy(input);
+                break;
+
+            default:
+
+                break;
+        }
+    }
+
+    private static void handleLogin(Scanner input, UserLab315 user) {
+
+        String password = input.nextLine().trim();
+        user.login(password);
+    }
+
+    private static void handleSetPolicy(Scanner input) {
+
+        int max = Integer.parseInt(input.nextLine().trim());
+        UserLab315.setPolicy(max);
     }
 }
